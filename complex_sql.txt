@@ -1,0 +1,20 @@
+1)	WRITE A SQL STATEMENT TO DISPLAY THE LOWEST PAID EMPLOYEE'S (NAME , SALARY , DEPARTMENT NAME)
+        select e.first_name, e.salary, d.department_name
+        from employees e INNER JOIN departments d
+        on e.department_id=d.department_id
+        where salary=(select MIN(salary)from employees);
+
+2)	LIST MINIMUM SALARY FOR EACH DEPARTMENT
+        select department_id, min(salary)
+        from employees
+        group by departments_id;
+
+4)	LIST ALL THE EMPLOYEES WHO ARE WORKING IN FORD’S DEPARTMENT.
+        select e.first_name
+        from employees e, departments d
+        where e.department_id=d.department_id and d.department_name="ford";
+
+3)	WRITE A QUERY  BASED ON  FOLLOWING RESULT. 
+select e.employee_id, e.first_name, e.job_id, e.salary, ddepartment_id, d.department_name
+from employee e INNER JOIN departments AS d
+ON e.department_id=d.department_id;
